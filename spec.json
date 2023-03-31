@@ -1,0 +1,19 @@
+{
+  "section": "Main Test",
+  "variants": [
+    {
+      "section": "Variants 1",
+      "variants": [
+        "TODO 1.1",
+        "TODO 1.2"
+      ]
+    },
+    {
+      "section": "Variants 2",
+      "variants": [
+        "TODO 2.1",
+        "TODO 2.2"
+      ]
+    }
+  ]
+}

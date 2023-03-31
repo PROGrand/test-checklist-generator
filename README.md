@@ -1,2 +1,2 @@
-# test-checklist-generator
-Generate test checklist
+A sample command-line application with an entrypoint in `bin/`, library code
+in `lib/`, and example unit test in `test/`.
