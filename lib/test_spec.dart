@@ -6,8 +6,9 @@ part 'test_spec.g.dart';
 @freezed
 class TestSpec with _$TestSpec {
   const factory TestSpec(
-    String section,
-    List variants,
+    String? section,
+    List? variants,
+    List? steps,
   ) = _TestSpec;
 
   factory TestSpec.fromJson(Map<String, dynamic> json) => _$TestSpecFromJson(json);

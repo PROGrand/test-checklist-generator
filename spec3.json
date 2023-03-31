@@ -1,0 +1,58 @@
+{
+  "section": "Camera test\n- [ ] passed",
+  "steps": [
+    {
+      "section": "\n```markdown\nPlatform",
+      "variants": [
+        "**ios**",
+        "**android**",
+        "**web**"
+      ]
+    },
+    {
+      "section": "Launch type",
+      "variants": [
+        "**clean**",
+        "**reinstall**",
+        "**restart after stop**",
+        "**restart after background**"
+      ]
+    },
+    "1 Login as **manager**",
+    "2 Create Fast track ",
+    {
+      "section": "Session",
+      "variants": [
+        {
+          "section": "single",
+          "steps": [
+            "2.1 Start record video",
+            "2.2 Record",
+            "2.3 Accept"
+          ]
+        },
+        {
+          "section": "repeat",
+          "steps": [
+            "2.1 Start record video",
+            "2.2 Cancel",
+            "2.3 Start record video",
+            "2.4 Record",
+            "2.5 Accept"
+          ]
+        },
+        {
+          "section": "recapture",
+          "steps": [
+            "2.1 Start record video",
+            "2.2 Record",
+            "2.3 Back",
+            "2.4 Record",
+            "2.5 Accept"
+          ]
+        }
+      ]
+    },
+    "\n```"
+  ]
+}

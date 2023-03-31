@@ -1,0 +1,19 @@
+{
+  "section": "Main Test",
+  "steps": [
+    {
+      "section": "Choose option",
+      "variants": [
+        "OPTION 1",
+        "OPTION 2"
+      ]
+    },
+    {
+      "section": "Click button",
+      "variants": [
+        "BUTTON 1",
+        "BUTTON 2"
+      ]
+    }
+  ]
+}

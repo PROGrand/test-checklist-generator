@@ -20,8 +20,9 @@ TestSpec _$TestSpecFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TestSpec {
-  String get section => throw _privateConstructorUsedError;
-  List<dynamic> get variants => throw _privateConstructorUsedError;
+  String? get section => throw _privateConstructorUsedError;
+  List<dynamic>? get variants => throw _privateConstructorUsedError;
+  List<dynamic>? get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $TestSpecCopyWith<$Res> {
   factory $TestSpecCopyWith(TestSpec value, $Res Function(TestSpec) then) =
       _$TestSpecCopyWithImpl<$Res, TestSpec>;
   @useResult
-  $Res call({String section, List<dynamic> variants});
+  $Res call({String? section, List<dynamic>? variants, List<dynamic>? steps});
 }
 
 /// @nodoc
@@ -50,18 +51,23 @@ class _$TestSpecCopyWithImpl<$Res, $Val extends TestSpec>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? section = null,
-    Object? variants = null,
+    Object? section = freezed,
+    Object? variants = freezed,
+    Object? steps = freezed,
   }) {
     return _then(_value.copyWith(
-      section: null == section
+      section: freezed == section
           ? _value.section
           : section // ignore: cast_nullable_to_non_nullable
-              as String,
-      variants: null == variants
+              as String?,
+      variants: freezed == variants
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
+      steps: freezed == steps
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ) as $Val);
   }
 }
@@ -73,7 +79,7 @@ abstract class _$$_TestSpecCopyWith<$Res> implements $TestSpecCopyWith<$Res> {
       __$$_TestSpecCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String section, List<dynamic> variants});
+  $Res call({String? section, List<dynamic>? variants, List<dynamic>? steps});
 }
 
 /// @nodoc
@@ -87,18 +93,23 @@ class __$$_TestSpecCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? section = null,
-    Object? variants = null,
+    Object? section = freezed,
+    Object? variants = freezed,
+    Object? steps = freezed,
   }) {
     return _then(_$_TestSpec(
-      null == section
+      freezed == section
           ? _value.section
           : section // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == variants
+              as String?,
+      freezed == variants
           ? _value._variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
+      freezed == steps
+          ? _value._steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>?,
     ));
   }
 }
@@ -106,25 +117,39 @@ class __$$_TestSpecCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TestSpec implements _TestSpec {
-  const _$_TestSpec(this.section, final List<dynamic> variants)
-      : _variants = variants;
+  const _$_TestSpec(
+      this.section, final List<dynamic>? variants, final List<dynamic>? steps)
+      : _variants = variants,
+        _steps = steps;
 
   factory _$_TestSpec.fromJson(Map<String, dynamic> json) =>
       _$$_TestSpecFromJson(json);
 
   @override
-  final String section;
-  final List<dynamic> _variants;
+  final String? section;
+  final List<dynamic>? _variants;
   @override
-  List<dynamic> get variants {
+  List<dynamic>? get variants {
+    final value = _variants;
+    if (value == null) return null;
     if (_variants is EqualUnmodifiableListView) return _variants;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_variants);
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<dynamic>? _steps;
+  @override
+  List<dynamic>? get steps {
+    final value = _steps;
+    if (value == null) return null;
+    if (_steps is EqualUnmodifiableListView) return _steps;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'TestSpec(section: $section, variants: $variants)';
+    return 'TestSpec(section: $section, variants: $variants, steps: $steps)';
   }
 
   @override
@@ -133,13 +158,17 @@ class _$_TestSpec implements _TestSpec {
         (other.runtimeType == runtimeType &&
             other is _$_TestSpec &&
             (identical(other.section, section) || other.section == section) &&
-            const DeepCollectionEquality().equals(other._variants, _variants));
+            const DeepCollectionEquality().equals(other._variants, _variants) &&
+            const DeepCollectionEquality().equals(other._steps, _steps));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, section, const DeepCollectionEquality().hash(_variants));
+      runtimeType,
+      section,
+      const DeepCollectionEquality().hash(_variants),
+      const DeepCollectionEquality().hash(_steps));
 
   @JsonKey(ignore: true)
   @override
@@ -156,15 +185,17 @@ class _$_TestSpec implements _TestSpec {
 }
 
 abstract class _TestSpec implements TestSpec {
-  const factory _TestSpec(final String section, final List<dynamic> variants) =
-      _$_TestSpec;
+  const factory _TestSpec(final String? section, final List<dynamic>? variants,
+      final List<dynamic>? steps) = _$_TestSpec;
 
   factory _TestSpec.fromJson(Map<String, dynamic> json) = _$_TestSpec.fromJson;
 
   @override
-  String get section;
+  String? get section;
   @override
-  List<dynamic> get variants;
+  List<dynamic>? get variants;
+  @override
+  List<dynamic>? get steps;
   @override
   @JsonKey(ignore: true)
   _$$_TestSpecCopyWith<_$_TestSpec> get copyWith =>
